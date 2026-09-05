@@ -1,0 +1,42 @@
+.section{ 
+  padding:110px 0; 
+}
+
+.section-head{
+  display:flex; 
+  justify-content:space-between; 
+  align-items:flex-end;
+  margin-bottom:56px; 
+  gap:24px; 
+  flex-wrap:wrap;
+}
+
+.eyebrow{
+  font-family: var(--mono); 
+  font-size: 12px; 
+  color: var(--accent);
+  letter-spacing: 0.1em; 
+  text-transform: uppercase; 
+  margin-bottom: 16px;
+}
+
+h2.section-title{
+  font-family: var(--serif); 
+  font-weight: 500; 
+  font-size: clamp(28px,4vw,44px);
+  letter-spacing: -0.01em;
+}
+
+.section-note{
+  font-family: var(--mono); 
+  font-size: 12px; 
+  color: var(--text-muted);
+  max-width: 30ch; 
+  text-align: right;
+}
+
+@media (max-width:640px){
+  .section-note{ 
+    text-align: left; 
+  }
+}

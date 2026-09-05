@@ -1,0 +1,139 @@
+.project-card{
+  scroll-snap-align: center;
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  border-radius: 16px;
+  padding: 30px; 
+  margin-bottom: 24px; 
+  position: relative;
+  transition: border-color .25s ease;
+  will-change: transform, opacity, filter;
+}
+
+.project-card:hover{ 
+    border-color:var(--accent); 
+}
+
+.pc-top{ 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:flex-start; 
+    gap:16px; 
+}
+
+.pc-icon{
+  width:34px; 
+  height:34px; 
+  border-radius:8px; 
+  background:var(--bg-elevated);
+  border:1px solid var(--border); 
+  display:flex; align-items:center; 
+  justify-content:center; 
+  flex-shrink:0;
+}
+
+.pc-icon svg{ 
+    width:16px; 
+    height:16px; 
+    color:var(--accent-cyan); 
+}
+
+.pc-context{ 
+    font-family:var(--mono); 
+    font-size:11px; 
+    color:var(--text-muted); 
+    margin-top:14px; 
+}
+
+.pc-title{ 
+    font-family:var(--serif); 
+    font-size:22px; 
+    font-weight:500; 
+    margin-top:8px; 
+}
+
+.pc-desc{ 
+    font-size:14px;
+    color:var(--text-muted); 
+    margin-top:12px; 
+    line-height:1.55; 
+}
+
+.pc-footer{ 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center; 
+    margin-top:20px; 
+    flex-wrap:wrap; 
+    gap:10px; 
+}
+
+.pc-tags{ display:flex; gap:8px; flex-wrap:wrap; }
+
+.tag{ font-family:var(--mono); font-size:11px; color:var(--text-muted); border:1px solid var(--border); padding:3px 8px; border-radius:20px; }
+
+.badge{ font-family:var(--mono); font-size:11px; color:#0B0C10; background:var(--accent); padding:3px 10px; border-radius:20px; font-weight:500; white-space:nowrap; }
+
+.skeleton{ 
+    position:relative; 
+    overflow:hidden; 
+    background:var(--bg-elevated); 
+    border-radius:6px; 
+}
+
+.skeleton::after{
+  content:''; 
+  position:absolute; 
+  inset:0; 
+  transform:translateX(-100%);
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  animation:shimmer 1.8s infinite;
+}
+
+@keyframes shimmer{ 
+    100%{ 
+        transform:translateX(100%); 
+    } 
+}
+
+.pc-title-sk{ 
+    height:22px; 
+    width:70%; 
+    margin-top:16px; 
+}
+
+.pc-desc-sk{ 
+    height:12px; 
+    width:100%; 
+    margin-top:14px; 
+}
+
+.pc-desc-sk + .pc-desc-sk{ 
+    margin-top:8px; 
+    width:85%; 
+}
+
+.pc-tags-sk{ 
+    display:flex; 
+    gap:8px; 
+    margin-top:22px; 
+}
+
+.tag-sk{ 
+    height:22px;
+    width:64px; 
+    border-radius:20px; 
+}
+
+.badge-sk{ 
+    height:22px; 
+    width:44px; 
+    border-radius:20px; 
+}
+
+
+@media (max-width:640px){
+  .project-card{ 
+    padding:24px; 
+    }
+}

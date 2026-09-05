@@ -1,0 +1,147 @@
+.nav{
+  position:absolute; 
+  left:0; 
+  right:0; 
+  bottom:10px; 
+  z-index:10;
+  border-bottom:1px solid transparent;
+}
+
+.nav .wrap{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  height:56px; 
+  overflow: hidden;
+  padding: 0;
+} 
+
+.nav.is-fixed{
+  position:fixed; 
+  top:0; 
+  bottom:auto;
+  background:rgba(11,12,16,0.85); 
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+
+.logo{ 
+  font-family: var(--mono); 
+  font-size: 20px; 
+  letter-spacing: 0.02em; 
+  display: flex; 
+  align-items: center; 
+}
+
+.logo p {
+  transform: translateX(-1000px);
+  animation: appear-nav-left 0.8s ease-out 1.2s forwards;
+}
+
+.nav .wrap::before{ 
+  content:''; 
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  border-radius: 50%; 
+  background: var(--accent-cyan)!important; 
+  box-shadow: 0 0 8px var(--accent-cyan)!important; 
+  animation: appear-dot-1 0.7s ease 1s forwards, appear-dot-2 0.7s ease 2s forwards;
+  position: absolute;
+  z-index: 1;
+  transform: translateX(-3px);
+
+}
+
+.navlinks{ 
+  display:flex; 
+  gap:32px; 
+  font-family:var(--mono); 
+  font-size:20px; 
+  color:var(--text-muted); 
+}
+
+.navlinks a{ 
+  transition:color .2s ease; 
+}
+
+.navlinks a:hover, .navlinks a:focus-visible{ 
+  color:var(--text); 
+}
+
+.navlinks a:focus-visible{ 
+  outline:1px solid var(--accent); 
+  outline-offset:4px; 
+}
+
+.navlinks a {
+    opacity: 0;
+    animation: appear-links
+   0.5s ease forwards;
+}
+
+.navlinks a:nth-child(1) {
+    animation-delay: 2.2s;
+}
+
+.navlinks a:nth-child(2) {
+    animation-delay: 2.4s;
+}
+
+.navlinks a:nth-child(3) {
+    animation-delay: 2.6s;
+}
+
+.navlinks a:nth-child(4) {
+    animation-delay: 2.8s;
+}
+
+@media (max-width:640px){ 
+  .navlinks{ 
+    display:none; 
+  } 
+}
+
+@keyframes appear-links {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear-nav-left {
+  from {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+}
+
+@keyframes appear-dot-1 {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(3);
+  }
+}
+
+@keyframes appear-dot-2 {
+  from {
+    transform: scale(3);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}

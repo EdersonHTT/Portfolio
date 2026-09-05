@@ -1,0 +1,14 @@
+:root{
+  --bg:#0B0C10;
+  --bg-elevated:#23252e;
+  --surface:#1A1B22;
+  --border:#2A2B33;
+  --text:#EDEDF0;
+  --text-muted:#9497A3;
+  --accent:#6C8CFF;
+  --accent-cyan:#5EEAD4;
+  --serif: 'Fraunces', serif;
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --hero-image: url('../../assets/dev.jpg');
+}
