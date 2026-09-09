@@ -1,13 +1,16 @@
 .project-card{
-  scroll-snap-align: center;
-  background: var(--surface); 
-  border: 1px solid var(--border); 
-  border-radius: 16px;
-  padding: 30px; 
-  margin-bottom: 24px; 
-  position: relative;
-  transition: border-color .25s ease;
-  will-change: transform, opacity, filter;
+    scroll-snap-align: center;
+    background: var(--surface); 
+    border-radius: 16px;
+    padding: 20px 30px; 
+    margin-bottom: 24px; 
+    position: relative;
+    transition: border-color .25s ease;
+    will-change: transform, opacity, filter;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .project-card:hover{ 
@@ -22,20 +25,56 @@
 }
 
 .pc-icon{
-  width:34px; 
-  height:34px; 
-  border-radius:8px; 
-  background:var(--bg-elevated);
-  border:1px solid var(--border); 
-  display:flex; align-items:center; 
-  justify-content:center; 
-  flex-shrink:0;
+    width:50px; 
+    height:50px; 
+    position:absolute;
+    top:0;
+    left:30px;
+    border-bottom-right-radius:8px; 
+    border-bottom-left-radius:8px; 
+    background: rgba(41, 47, 70, 0.445);
+    display:flex; align-items:center; 
+    justify-content:center; 
 }
 
 .pc-icon svg{ 
-    width:16px; 
-    height:16px; 
+    width: 19px; 
+    height: 19px; 
     color:var(--accent-cyan); 
+}
+
+.pc-stats{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:var(--text-muted);
+    font-family:var(--mono);
+    font-size:11px;
+}
+
+.pc-stat{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+}
+
+.pc-stat svg,
+.pc-footer .git-link svg{
+    width:19px;
+    height:19px;
+}
+
+.git-link {
+    width: 19px;
+    height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pc-stat:first-child svg{
+    color:var(--accent);
 }
 
 .pc-context{ 
@@ -49,7 +88,7 @@
     font-family:var(--serif); 
     font-size:22px; 
     font-weight:500; 
-    margin-top:8px; 
+    margin-top:19px; 
 }
 
 .pc-desc{ 
@@ -68,26 +107,19 @@
     gap:10px; 
 }
 
-.pc-tags{ display:flex; gap:8px; flex-wrap:wrap; }
-
-.tag{ font-family:var(--mono); font-size:11px; color:var(--text-muted); border:1px solid var(--border); padding:3px 8px; border-radius:20px; }
-
-.badge{ font-family:var(--mono); font-size:11px; color:#0B0C10; background:var(--accent); padding:3px 10px; border-radius:20px; font-weight:500; white-space:nowrap; }
-
-.skeleton{ 
-    position:relative; 
-    overflow:hidden; 
-    background:var(--bg-elevated); 
-    border-radius:6px; 
+.pc-tags{ 
+    display:flex; 
+    gap:8px; 
+    flex-wrap:wrap; 
 }
 
-.skeleton::after{
-  content:''; 
-  position:absolute; 
-  inset:0; 
-  transform:translateX(-100%);
-  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
-  animation:shimmer 1.8s infinite;
+.tag{ 
+    font-family:var(--mono); 
+    font-size:11px; 
+    color:var(--text-muted); 
+    border:1px solid var(--border); 
+    padding:3px 8px; 
+    border-radius: 0.3rem; 
 }
 
 @keyframes shimmer{ 
@@ -136,4 +168,65 @@
   .project-card{ 
     padding:24px; 
     }
+
+    .pc-icon{
+        left:24px;
+    }
+}
+
+.tool-card {
+    flex: 0 0 auto;
+    width: 150px;
+    margin: 0 12px;
+    scroll-snap-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px 18px;
+    text-align: center;
+    transition: border-color 0.25s ease;
+    will-change: transform, opacity, filter;
+}
+
+.tool-card:hover {
+    border-color: var(--accent);
+}
+
+.tool-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 16px;
+    border-radius: 10px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+.tool-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.tool-category {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .tool-card {
+    width: 120px;
+    margin: 0 8px;
+    padding: 20px 14px;
+  }
 }

@@ -22,7 +22,6 @@
   bottom:auto;
   background:rgba(11,12,16,0.85); 
   backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border);
 }
 
 .logo{ 
@@ -67,6 +66,8 @@
 
 .navlinks a:hover, .navlinks a:focus-visible{ 
   color:var(--text); 
+  filter: drop-shadow(0 0 2px var(--accent));
+  border-bottom: 1px solid var(--accent);
 }
 
 .navlinks a:focus-visible{ 
