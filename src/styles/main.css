@@ -5,6 +5,8 @@
 @import "./components/navbar.css";
 @import "./components/button.css";
 @import "./components/card.css";
+@import "./components/projects.css";
+@import "./components/toolsCarousel.css";
 @import "./components/reveal.css";
 
 @import "./layout/grid.css";
