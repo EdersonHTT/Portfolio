@@ -1,9 +1,13 @@
+
+
+
 .projects-frame{
 	position:relative;
 	height:620px;
 	max-height:70vh;
 	min-height:240px;
 	overflow:hidden;
+	padding: 10px;
 }
 
 .projects-frame::before,
@@ -25,7 +29,7 @@
 }
 
 .projects-frame::after{
-	bottom:0;
+	bottom: 25px;
 	background:linear-gradient(to top, var(--bg), transparent);
 }
 

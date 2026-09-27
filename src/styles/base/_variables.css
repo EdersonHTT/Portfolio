@@ -10,5 +10,29 @@
   --serif: 'Fraunces', serif;
   --sans: 'Inter', sans-serif;
   --mono: 'JetBrains Mono', monospace;
-  --hero-image: url('../../assets/dev.jpg');
-} 
+  --hero-image: url('../../assets/dev.png');
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:#f5f7f8;
+    --bg-elevated:#FFFFFF;
+    --surface:#FFFFFF;
+    --border:#D9D5CC;
+    --text:#1B1C20;
+    --text-muted:#6B6B72;
+    --accent:#6C8CFF;
+    --accent-cyan:#5EEAD4;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg:#f5f7f8;
+  --bg-elevated:#FFFFFF;
+  --surface:#FFFFFF;
+  --border:#D9D5CC;
+  --text:#1B1C20;
+  --text-muted:#6B6B72;
+  --accent:#6C8CFF;
+  --accent-cyan:#5ec2ea;
+}

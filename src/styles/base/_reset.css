@@ -13,6 +13,9 @@ body{
   line-height:1.5;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 a{ 

@@ -1,3 +1,11 @@
+[data-theme="light"] {
+    --icon-bg-projects: rgba(64, 97, 230, 0.144);
+}
+
+[data-theme="dark"] {
+    --icon-bg-projects: rgba(41, 47, 70, 0.445);
+}
+
 .project-card{
     scroll-snap-align: center;
     background: var(--surface); 
@@ -11,10 +19,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.project-card:hover{ 
-    border-color:var(--accent); 
+    box-shadow: 0 0 10px rgba(41, 49, 65, 0.295);
 }
 
 .pc-top{ 
@@ -32,7 +37,7 @@
     left:30px;
     border-bottom-right-radius:8px; 
     border-bottom-left-radius:8px; 
-    background: rgba(41, 47, 70, 0.445);
+    background: var(--icon-bg-projects);
     display:flex; align-items:center; 
     justify-content:center; 
 }
@@ -60,13 +65,13 @@
 }
 
 .pc-stat svg,
-.pc-footer .git-link svg{
+.pc-footer svg{
     width:19px;
     height:19px;
 }
 
 .git-link {
-    width: 19px;
+    width: auto;
     height: 19px;
     display: flex;
     align-items: center;
