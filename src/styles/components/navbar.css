@@ -1,3 +1,14 @@
+[data-theme="light"] {
+  --bg-nav:rgba(54, 80, 184, 0.315);
+  --navlink-color: var(--text-muted);
+  --navlink-hover-color: var(--text);
+}
+
+[data-theme="dark"] {
+  --navlink-color: var(--text-muted);
+  --navlink-hover-color: var(--text);
+}
+
 .nav{
   position:absolute; 
   left:0; 
@@ -20,7 +31,7 @@
   position:fixed; 
   top:0; 
   bottom:auto;
-  background:rgba(11,12,16,0.85); 
+  background: var(--bg-nav, rgba(11, 12, 16, 0.685)); 
   backdrop-filter:blur(10px);
 }
 
@@ -43,8 +54,8 @@
   height: 10px;
   opacity: 0;
   border-radius: 50%; 
-  background: var(--accent-cyan)!important; 
-  box-shadow: 0 0 8px var(--accent-cyan)!important; 
+  background: var(--accent-cyan); 
+  box-shadow: 0 0 8px var(--accent-cyan); 
   animation: appear-dot-1 0.7s ease 1s forwards, appear-dot-2 0.7s ease 2s forwards;
   position: absolute;
   z-index: 1;
@@ -54,18 +65,33 @@
 
 .navlinks{ 
   display:flex; 
+  align-items:center;
   gap:32px; 
   font-family:var(--mono); 
   font-size:20px; 
-  color:var(--text-muted); 
+}
+
+.nav .navlinks a {
+  color: var(--text-muted);
+}
+
+.nav.is-fixed .navlinks a {
+  color: var(--navlink-color);
 }
 
 .navlinks a{ 
   transition:color .2s ease; 
 }
 
+.navlinks a:hover {
+  color: white;
+}
+
+.nav.is-fixed .navlinks a:hover {
+  color: var(--navlink-hover-color);
+}
+
 .navlinks a:hover, .navlinks a:focus-visible{ 
-  color:var(--text); 
   filter: drop-shadow(0 0 2px var(--accent));
   border-bottom: 1px solid var(--accent);
 }
@@ -99,7 +125,15 @@
 
 @media (max-width:640px){ 
   .navlinks{ 
-    display:none; 
+    gap: 0;
+  }
+
+  .navlinks a {
+    display:none;
+  }
+
+  .theme-toggle {
+    margin-right: 16px;
   } 
 }
 

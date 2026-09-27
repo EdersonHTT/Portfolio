@@ -3,6 +3,7 @@
 @import "./base/_typography.css";
 
 @import "./components/navbar.css";
+@import "./components/theme.css";
 @import "./components/button.css";
 @import "./components/card.css";
 @import "./components/projects.css";

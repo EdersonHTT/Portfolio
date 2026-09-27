@@ -1,0 +1,83 @@
+[data-theme="light"] {
+  --left: 2px;
+  --right: none;
+  --bg-btn: #ffffff;
+  --border-btn: #dde1fd;
+}
+
+[data-theme="dark"] {
+  --left: none;
+  --right: 2px;
+}
+
+.theme-toggle {
+  width: 48px;
+  height: 20px;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 4px;
+  border: 2px solid var(--border-btn, #1a1b22fa);
+  border-radius: 2rem;
+  background-color: var(--bg-btn, #1a1b22b7);
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  opacity: 0;
+  animation: appear 1s ease 3s forwards;
+}
+
+.theme-toggle::after {
+  content: '';
+  height: 20px;
+  width: 20px;
+  background: var(--accent);
+  border-radius: 50%; 
+  position: absolute;
+  z-index: 0;
+  left: var(--left);
+  right: var(--right);
+  
+}
+
+.theme-toggle i {
+  position: absolute;
+  z-index: 1;
+  line-height: 20px;
+  width: 20px;
+  color: var(--text-muted);
+}
+
+.theme-toggle .active {
+  color: var(--text);
+}
+
+.theme-toggle i:nth-child(1) {
+  left: 2px;
+}
+
+.theme-toggle i:nth-child(2) {
+  right: 2px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
