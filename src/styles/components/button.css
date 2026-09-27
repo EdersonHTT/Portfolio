@@ -1,0 +1,49 @@
+.car-btn {
+  width: 40px; 
+  height: 40px; 
+  border-radius: 0.7rem;
+  border: none!important;
+  background: var(--surface); 
+  color: var(--text-muted);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 1.4rem;
+  text-align: center;
+
+}
+
+.car-btn i {
+  line-height: 1;
+}
+
+.car-btn:hover { 
+  filter: drop-shadow(0 0 0.2rem var(--accent-cyan));
+  color: var(--accent-cyan);
+ }
+
+.car-btn:active { 
+  transform: scale(0.94); 
+}
+
+.car-btn svg { 
+  width: 16px; 
+  height: 16px; 
+}
+
+.git-link {
+  font-family: var(--mono); 
+  font-size: 12px; 
+  color: var(--accent-cyan);
+  text-transform: uppercase; 
+  letter-spacing: 0.08em; 
+  text-decoration: underline;
+  text-underline-offset: 4px; 
+  transition: opacity .2s ease;
+}
+
+.git-link:hover{ 
+  opacity:0.75; 
+}

@@ -1,0 +1,17 @@
+@import "./base/_variables.css";
+@import "./base/_reset.css";
+@import "./base/_typography.css";
+
+@import "./components/navbar.css";
+@import "./components/theme.css";
+@import "./components/button.css";
+@import "./components/card.css";
+@import "./components/projects.css";
+@import "./components/toolsCarousel.css";
+@import "./components/reveal.css";
+
+@import "./layout/grid.css";
+@import "./layout/header.css";
+@import "./layout/footer.css";
+
+@import "./pages/home.css";
